@@ -6,11 +6,11 @@
 |-------|-------|
 | **Architecture** | EfficientNet-B3 (pretrained on ImageNet) |
 | **Framework** | PyTorch 2.x |
-| **Task** | 30-class mushroom species image classification |
+| **Task** | 50-class mushroom species image classification |
 | **Input** | RGB image, 224×224 px, normalized with ImageNet statistics |
 | **Output** | Softmax probability distribution over 30 species |
-| **Final validation accuracy** | **83%** (600-sample val set) |
-| **Macro F1-score** | 0.83 |
+| **Final validation accuracy** | **80%** (1,500-sample val set) |
+| **Macro F1-score** | 0.80 |
 
 ## Training
 
@@ -23,7 +23,7 @@
 
 - **Loss function**: Cross-Entropy
 - **Batch size**: 32
-- **Hardware**: Kaggle T4 GPU (~10 min total)
+- **Hardware**: Kaggle T4 GPU (~15 min total)
 
 ### Classification head
 
@@ -49,20 +49,21 @@ EfficientNet-B3 backbone (frozen / partially unfrozen)
 
 ## Performance
 
-### Per-class highlights (validation set, 20 samples/class)
+### Per-class highlights (validation set, 30 samples/class)
 
 | Species | F1 |
 |---------|----|
-| Lycoperdon perlatum | 0.97 |
+| Rhytisma acerinum | 0.97 |
 | Mycena leaiana | 0.95 |
-| Hericium coralloides | 0.93 |
-| Tricholomopsis rutilans | 0.67 |
-| Boletus edulis | 0.62 |
+| Hericium coralloides | 0.95 |
+| Evernia prunastri | 0.62 |
+| Daedaleopsis confragosa | 0.49 |
 
 ### Known confusions
 
+- **Daedaleopsis confragosa** (F1 0.49): worst-performing class — visually similar to other bracket fungi (*Trametes*, *Fomitopsis*) with overlapping colour and pore patterns.
 - **Parmelia sulcata ↔ Xanthoria parietina**: both foliose lichens with similar grey-green colouration.
-- **Cerioporus squamosus ↔ Fomitopsis pinicola**: both bracket fungi with overlapping colour ranges.
+- **Fomes fomentarius** (F1 0.66): hoof-shaped bracket fungi often confused with *Fomitopsis* species.
 
 ## Intended Use
 
@@ -85,6 +86,6 @@ EfficientNet-B3 backbone (frozen / partially unfrozen)
 
 ## Limitations
 
-- Trained on a small subset (1,500 images, 30 species) of a 100+ species dataset.
-- Accuracy varies across species (range 62%–97%).
+- Trained on a subset (5,000 images, 50 species) of a 100+ species dataset.
+- Accuracy varies across species (range 49%–97% F1).
 - No test-time augmentation or ensemble - a production system should use both.

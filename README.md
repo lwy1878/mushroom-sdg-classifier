@@ -2,7 +2,7 @@
 
 **SDG 3 - Good Health & Well-being | SDG 15 - Life on Land**
 
-An image classifier that identifies mushroom species from photos using transfer learning (EfficientNet-B3). Achieves **83% validation accuracy** on 30 species in ~10 minutes on a T4 GPU.
+An image classifier that identifies mushroom species from photos using transfer learning (EfficientNet-B3). Achieves **80% validation accuracy** on 50 species in ~15 minutes on a T4 GPU.
 
 **Team:** Paul Arbez (114012021) · Baptiste Caulier (114012019) · 呂維洋 (111370218)
 
@@ -111,10 +111,10 @@ mushroom-sdg-classifier/
 
 | Phase | Epochs | Val Accuracy |
 |-------|--------|-------------|
-| Head only | 1–5 | 56% → 67.5% |
-| Fine-tuning | 6–10 | 69% → **83%** |
+| Head only | 1–5 | 52% → 62.1% |
+| Fine-tuning | 6–10 | 73.3% → **80.1%** |
 
-Macro F1: **0.83** across 30 species (600-image validation set).
+Macro F1: **0.80** across 50 species (1,500-image validation set).
 
 ---
 

@@ -19,12 +19,12 @@ Each CSV row contains:
 
 ## Subset Used in This Project
 
-To enable rapid prototyping on a Kaggle T4 GPU:
+To balance training coverage and GPU time on a Kaggle T4 GPU:
 
 | Split | Classes | Images per class | Total |
 |-------|---------|-----------------|-------|
-| Train | 30 (top by frequency) | 50 | 1,500 |
-| Validation | 30 (same as train) | 20 | 600 |
+| Train | 50 (top by frequency) | 100 | 5,000 |
+| Validation | 50 (same as train) | 30 | 1,500 |
 
 Only species present in the training split are kept in validation to avoid label-encoding errors.
 

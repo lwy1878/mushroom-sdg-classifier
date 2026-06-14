@@ -126,7 +126,7 @@ Misidentifying a toxic mushroom as edible can be fatal. See [docs/MODEL_CARD.md]
 - Include a **confidence threshold**: warn users when the model is uncertain.
 - Always show a **disclaimer** advising users to consult a professional mycologist before consuming any wild mushroom.
 
-Reference paper: *Fungi Recognition: A Practical Use Case* - Sulc & Matas, 2019 ([arXiv:1806.05712](https://arxiv.org/abs/1806.05712)).
+Reference paper: *Fungi Recognition: A Practical Use Case* - Sulc & Matas, 2019.
 
 ---
 
